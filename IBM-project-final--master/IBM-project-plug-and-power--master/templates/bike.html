@@ -1,0 +1,203 @@
+<head>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+.card
+{
+    box-sizing: border-box;
+    margin-top: 30px;
+    margin-left: 0px;
+  border-radius: 4px;
+  box-shadow: inset;
+
+ 
+}
+
+.info-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    background-color:rgb(255, 208, 0);
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    display: none;
+    z-index: 999;
+  }
+  </style>
+  </head>
+  <body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary"
+     style="height: 70px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: xx-large;">
+     <a class="navbar-brand ml-5" href="#"><strong>ChargeStation Hub</strong></a>
+
+
+     <!-- Your profile card content here -->
+
+
+     <!-- Add more details or elements as needed -->
+
+
+   </nav>
+   <!-- Navbar 2 - Bright Colors -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+     <div class="collapse navbar-collapse" id="navbarNav">
+       <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-5 mr-6">
+            <a class="nav-link" href="{{url_for('home')}}"><strong>Home</strong></a>
+          </li>
+         <li class="nav-item mx-5 mr-6 ml-3">
+           <a class="nav-link" href="{{url_for('about')}}"><strong>About</strong></a>
+         </li>
+         <li class="nav-item dropdown mx-4 mr-5">
+           <a class="nav-link dropdown-toggle" href="#" id="workshopsDropdown" role="button" data-bs-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+             <strong>ChargeStations</strong>
+           </a>
+           <div class="dropdown-menu" aria-labelledby="workshopsDropdown">
+             <!-- Dropdown content goes here -->
+           <a class="dropdown-item" href="{{url_for('bike')}}">Bike</a>
+             <a class="dropdown-item" href="#">Car</a>
+             <a class="dropdown-item" href="#">Auto</a>
+             <a class="dropdown-item" href="#">Audi</a>
+
+           </div>
+         </li>
+
+         <li class="nav-item mx-5 mr-6">
+           <a class="nav-link" href="{{url_for('getlocation')}}"> <strong>GetLocation</strong></a>
+         </li>
+         <li class="nav-item mx-5 mr-6">
+           <a class="nav-link" href="{{url_for('upload')}}"><strong>UploadStation</strong></a>
+         </li>
+        <li class="nav-item mx-5 mr-6">
+          <a class="nav-link" href="{{url_for('confirm')}}"><strong>Activecharge</strong></a>
+        </li>
+        <li class="nav-item mx-5 mr-6">
+          <a class="nav-link" href="{{url_for('faq')}}"><strong>faq's</strong></a>
+        </li>
+        <li class="nav-item mx-5 my-lg-0">
+          <a class="nav-link" href="{{url_for('contact')}}"><strong>ContactUs</strong></a>
+        </li>
+         <li class="nav-item mx-4 my-lg-0 my-0">
+          <div class="btn btn-primary" style="border-radius:20px;color:white;font-weight:bolder;"><a class="nav-link" href="{{url_for('confirm')}}">Near Station</a>
+           </div>
+         </li>
+       </ul>
+     </div>
+   </nav>
+  <div class="container">
+    <div class="row">
+        <div class="col-3">
+            <div class="card">
+                <img src="data:image/jpeg;base64,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" height="250px">
+                <hr/>
+                <div class="card-body">
+                    <p><strong>Name of Station:</strong>Ather Electric Charge Station</p>
+                    <p><strong>Station Location:</strong>Hyderabad – Almond House, Sarath City Capital Mall, The Moonshine Project, Swiss Castle, Chai Kahani</p>
+                   
+                </div>
+                <div class="card-footer">
+                    <div class="btn btn-primary" onclick="moreinfo()">Moreinfo</div>
+                    <div class="info-card" id="infocard">
+                        <div class="card-body">
+                            <p><strong>Name of Station</strong>Ather Electric Charge Station</p>
+                            <p><strong>Station Location::</strong>Hyderabad – Almond House</p>
+                            <p><strong>Latitude:</strong>17.366</p>
+                            <p><strong>Longitude</strong>78.486</p>
+                        </div> 
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxzbQi1aXFky8cTm0Uf8XzQKXD_-9tZ_LQow&usqp=CAU" height="250px">
+                <hr/>
+                <div class="card-body">
+                    
+                        <p><strong>Name of Station:</strong>Ather Electric Charge Station</p>
+                        <p><strong>Station Location:</strong>Hyderabad – Almond House, Sarath City Capital Mall, The Moonshine Project, Swiss Castle, Chai Kahani</p>
+                       
+                    
+                </div>
+                <div class="card-footer">
+                    <div class="btn btn-primary" onclick="moreinfo()">Moreinfo</div>
+                    <div class="info-card" id="infocard">
+                        <div class="card-body">
+                            <p><strong>Name of Event:</strong>Cyber Security</p>
+                            <p><strong>Event Start Date:</strong>10/10/2023</p>
+                            <p><strong>Event End Date:</strong>15/10/2023</p>
+                            <p><strong>Fees:</strong>50$</p>
+                        </div> 
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTysMBxdKwVf3O5LiMLHhQQWU6iH_F1EIimWA&usqp=CAU" height="250px">
+                <hr/>
+                
+                    <div class="card-body">
+                        <p><strong>Name of Station:</strong>Ather Electric Charge Station</p>
+                        <p><strong>Station Location:</strong>Hyderabad – Almond House, Sarath City Capital Mall, The Moonshine Project, Swiss Castle, Chai Kahani</p>
+                       
+                    </div>
+                
+                <div class="card-footer">
+                    <div class="btn btn-primary" onclick="moreinfo()">Moreinfo</div>
+                    <div class="info-card" id="infocard">
+                        <div class="card-body">
+                            <p><strong>Name of Station:</strong>Ather Electric Charge Station</p>
+                            <p><strong>Station Location:</strong>Hyderabad – Almond House, Sarath City Capital Mall, The Moonshine Project, Swiss Castle, Chai Kahani</p>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3cbh5dZOIl1PtG4e8IwvxazXHjQ9ailiMiA&usqp=CAU" height="250px">
+                <hr/>
+                <div class="card-body">
+                    <p><strong>Name of Station:</strong>Ather Electric Charge Station</p>
+                    <p><strong>Station Location:</strong>Hyderabad – Almond House, Sarath City Capital Mall, The Moonshine Project, Swiss Castle, Chai Kahani</p>
+                   
+                </div>
+                <div class="card-footer">
+                    <div class="btn btn-primary" onclick="moreinfo()">Moreinfo</div>
+                    <div class="info-card" id="infocard">
+                        <div class="card-body">
+                            <p><strong>Name of Station</strong>Ather Electric Charge Station</p>
+                            <p><strong>Latitude</strong>17.3850</p>
+                            <p><strong>Longitude</strong>78.4867</p>
+                            <p><strong>Location</strong>:Hyderabad – Almond House, Sarath City Capital Mall, The Moonshine Project, Swiss Castle, Chai Kahani</p>
+                        
+
+                        </div> 
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function toggleProfileCard() {
+    const profileCard = document.getElementById('profileCard');
+    profileCard.style.display = profileCard.style.display === 'none' ? 'block' : 'none';
+  }
+  function moreinfo() {
+    const infoCard = document.getElementById('infocard');
+    infoCard.style.display = infoCard.style.display === 'none' ? 'block' : 'none';
+  }
+  </script>

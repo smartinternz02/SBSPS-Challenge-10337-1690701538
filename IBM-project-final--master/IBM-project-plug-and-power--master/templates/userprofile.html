@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <style>
+    .carousel {
+      margin-bottom: 4rem;
+    }
+
+    .carousel-caption {
+      bottom: 3rem;
+      z-index: 10;
+    }
+
+    .carousel-item {
+      height: 22rem;
+    }
+
+    .carousel-item>img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 22rem;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .image {
+      padding: 20px;
+
+    }
+
+    .content {
+      padding: 20px;
+      font-size: 20px;
+
+
+    }
+
+    .navigation-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .navigation-buttons button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .navigation-buttons button:hover {
+      background-color: #0056b3;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 4px;
+    }
+
+    .plant-card {
+      border: 1px solid #ccc;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .image {
+      padding: 20px;
+    }
+
+    .content {
+      text-align: center;
+      padding: 20px;
+      font-size: 17px;
+    }
+
+    .welcome-section {
+      background-color: #A5A5A5;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .welcome-section h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .welcome-section p {
+      font-size: 18px;
+    }
+  </style>
+  <!-- Navbar 1 - Academic Confluences -->
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary"
+    style="height: 70px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: xx-large;">
+    <a class="navbar-brand ml-5" href="#"><strong>ChargeStation Hub</strong></a>
+
+
+    <!-- Your profile card content here -->
+
+
+    <!-- Add more details or elements as needed -->
+
+
+  </nav>
+  <!-- Navbar 2 - Bright Colors -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item mx-5 mr-6">
+          <a class="nav-link" href="{{url_for('home')}}"><strong>Home</strong></a>
+        </li>
+        <li class="nav-item mx-5 mr-6 ml-3">
+          <a class="nav-link" href="{{url_for('about')}}"><strong>About</strong></a>
+        </li>
+        <li class="nav-item dropdown mx-4 mr-5">
+          <a class="nav-link dropdown-toggle" href="#" id="workshopsDropdown" role="button" data-bs-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <strong>ChargeStations</strong>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="workshopsDropdown">
+            <!-- Dropdown content goes here -->
+            <a class="dropdown-item" href="{{url_for('bike')}}">Bike</a>
+            <a class="dropdown-item" href="#">Car</a>
+            <a class="dropdown-item" href="#">Auto</a>
+            <a class="dropdown-item" href="#">Audi</a>
+
+          </div>
+        </li>
+
+        <li class="nav-item mx-5 mr-6">
+          <a class="nav-link" href="{{url_for('getlocation')}}"> <strong>GetLocation</strong></a>
+        </li>
+        <li class="nav-item mx-5 mr-6">
+          <a class="nav-link" href="{{url_for('upload')}}"><strong>UploadStation</strong></a>
+        </li>
+       <li class="nav-item mx-5 mr-6">
+         <a class="nav-link" href="{{url_for('confirm')}}"><strong>Activecharge</strong></a>
+       </li>
+        <li class="nav-item mx-5 mr-6">
+          <a class="nav-link" href="{{url_for('faq')}}"><strong>faq's</strong></a>
+        </li>
+        <li class="nav-item mx-5 my-lg-0">
+          <a class="nav-link" href="{{url_for('contact')}}"><strong>ContactUs</strong></a>
+        </li>
+        <li class="nav-item mx-4 my-lg-0 my-0">
+          <div class="btn btn-primary" style="border-radius:20px;color:white;font-weight:bolder;"><a class="nav-link" href="{{url_for('confirm')}}">Near Station</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--corousel code ,home screen-->
+
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+        aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://etimg.etb2bimg.com/photo/92712829.cms">
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>Everything Unplug You </h1>
+            <p>Use electrical vehicales,reduce the polution</p>
+            <p><a class="btn btn-lg bg-warning" href="{{url_for('confirm')}}">Near Station</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/5f3b08d4515c242514c95656/f7890c9c-7fcc-439b-b285-5d1328b375c1/commercial-ev-charging-station.jpg">
+      </div>
+      <div class="carousel-item">
+        <img
+          src="https://www.frommers.com/system/media_items/attachments/000/868/537/s980/Electric_Vehicle_Charging.jpg?1648147924">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="welcome-section">
+    <h2>Welcome to Charging Stations Hub</h2>
+    <p>Explore our network of electric vehicle charging stations and contribute to a greener future.</p>
+  </div>
+  <div class="navigation-buttons">
+    <button (click)="scrollToSection('why')">Why</button>
+    <button (click)="scrollToSection('use')">Life Saviours</button>
+  </div>
+
+  <div class="container" id="why">
+    <div class="image">
+      <img src="https://static.toiimg.com/photo/msid-86421961/86421961.jpg" width="400" height="200">
+    </div>
+    <div class="content">
+      Using electric vehicles (EVs) is a wise choice for several reasons. EVs are good for the environment, they can
+      also save you money and offer a smoother driving experience. Unlike regular cars that run on gasoline, EVs use
+      electricity to move, which means they don't produce harmful gases that pollute the air and contribute to climate
+      change. This helps keep our air clean and protects our planet for the future.
+      When you drive an EV, you can also save money. Charging an EV with electricity is usually cheaper than filling up
+      a gas tank, which means you spend less on fuel. Additionally, EVs have fewer parts that can break down, so they
+      generally need less maintenance and repairs, helping you save on maintenance costs over time.
+    </div>
+  </div>
+  <div class="container">
+    <div class="content">
+      What's more, driving an EV can be quieter and more peaceful compared to traditional cars. Since EVs run quietly on
+      electricity, they create less noise pollution, making your drives more enjoyable and serene. Plus, as technology
+      keeps advancing, EVs are getting even better. Manufacturers are making improvements to EV batteries, making them
+      last longer and travel farther on a single charge.
+
+      Governments and communities are also encouraging the use of EVs by offering incentives like tax breaks and special
+      parking privileges. This means that choosing an EV not only benefits you, but it's also supported by the people
+      around you.</div>
+
+    <div class="image">
+      <img src=" https://www.cartoq.com/wp-content/uploads/2023/03/ather-electric-scooter-charging-station.jpg"
+        width="400" height="200">
+    </div>
+  </div>
+  <div class="container">
+    <div class="image">
+      <img
+        src="https://bloximages.newyork1.vip.townnews.com/theweeklyjournal.com/content/tncms/assets/v3/editorial/f/c6/fc618b86-e377-11ec-a982-4309ca5265fa/629a690595ceb.image.jpg?resize=400%2C302"
+        width="400" height="200">
+    </div>
+    <div class="content">
+      As technology advances, EVs are becoming increasingly sophisticated. Improvements in battery technology are
+      extending their range, making longer journeys possible without frequent charging stops. Governments and local
+      authorities are recognizing the importance of EVs in reducing pollution, and they often provide incentives such as
+      tax benefits and special perks to encourage their adoption.
+
+      By choosing to drive an EV, you're becoming a part of a positive movement towards sustainable transportation. Your
+      decision contributes to lessening our reliance on fossil fuels, promoting cleaner air, and taking a step towards a
+      more sustainable future. In essence, using electric vehicles isn't just about convenience; it's a conscious and
+      impactful choice that benefits both you and the world we live in.</div>
+  </div>
+  <div class="header">
+  </div>
+  <div class="grid-container">
+    <div class="plant-card" id="use">
+      <div class="image">
+        <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0195925520307848-gr2.jpg" width="400" height="200">
+      </div>
+      <div class="content">
+        <p>Unlike traditional gasoline or diesel vehicles that emit pollutants directly from their tailpipes, EVs
+          produce zero tailpipe emissions. EVs operate using electricity stored in batteries, eliminating exhaust
+          emissions such as carbon monoxide, nitrogen oxides, and particulate matter that contribute to air pollution
+          and respiratory problems.</p>
+      </div>
+    </div>
+    <div class="plant-card" id="use">
+      <div class="image">
+        <img
+          src="https://www.lta.gov.sg/content/ltagov/en/who_we_are/statistics_and_publications/Connect/8EVsfacts/_jcr_content/title/par/image_653773826.img.png/1648783644656.png"
+          width="400" height="200">
+      </div>
+      <div class="content">
+        <p>EVs generate fewer greenhouse gas emissions, primarily carbon dioxide (CO2), which is a major contributor to
+          climate change. Traditional vehicles burning fossil fuels release CO2 into the atmosphere, intensifying global
+          warming. EVs, particularly when charged with renewable energy sources, emit significantly lower or even no CO2
+          during operation, helping mitigate climate change effects.</p>
+      </div>
+
+    </div>
+    <div class="plant-card">
+      <div class="image">
+        <img src="https://www.echosupply.com/media/wysiwyg/noise-reduction-post-full.png" width="400" height="200">
+      </div>
+      <div class="content">
+        <p>Electric motors in EVs produce minimal noise compared to the internal combustion engines in traditional
+          vehicles. This reduction in noise pollution contributes to quieter neighborhoods, promoting well-being and
+          reducing stress.
+          Lower noise levels from EVs can enhance road safety. Pedestrians, cyclists, and drivers can better hear
+          approaching vehicles, especially in scenarios where visibility might be limited, leading to improved awareness
+          and accident prevention.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!--home screen ends -->
+</body>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>

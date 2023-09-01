@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Charging Stations Finder</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+
+</head>
+<style>
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  margin-top:20px;
+}
+h1{
+   text-align: center;
+   margin-top:10px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top:100px;
+    padding: 20px;
+    background-color:lightblue; /* Adjusted background color */
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color:#FFD700;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+
+</style>
+<body>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-primary"
+   style="height: 70px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: xx-large;">
+   <a class="navbar-brand ml-5" href="#"><strong>ChargeStation Hub</strong></a>
+
+
+   <!-- Your profile card content here -->
+
+
+   <!-- Add more details or elements as needed -->
+
+
+ </nav>
+ <!-- Navbar 2 - Bright Colors -->
+ <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ml-auto">
+        <li class="nav-item mx-5 mr-6">
+          <a class="nav-link" href="{{url_for('home')}}"><strong>Home</strong></a>
+        </li>
+        <li class="nav-item mx-5 mr-6 ml-3">
+          <a class="nav-link" href="{{url_for('about')}}"><strong>About</strong></a>
+        </li>
+       <li class="nav-item dropdown mx-4 mr-5">
+         <a class="nav-link dropdown-toggle" href="#" id="workshopsDropdown" role="button" data-bs-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+           <strong>ChargeStations</strong>
+         </a>
+         <div class="dropdown-menu" aria-labelledby="workshopsDropdown">
+           <!-- Dropdown content goes here -->
+            <a class="dropdown-item" href="{{url_for('bike')}}">Bike</a>
+           <a class="dropdown-item" href="#">Car</a>
+           <a class="dropdown-item" href="#">Auto</a>
+           <a class="dropdown-item" href="#">Audi</a>
+
+         </div>
+       </li>
+
+       <li class="nav-item mx-5 mr-6">
+         <a class="nav-link" href="{{url_for('getlocation')}}"> <strong>GetLocation</strong></a>
+       </li>
+       <li class="nav-item mx-5 mr-6">
+         <a class="nav-link" href="{{url_for('upload')}}"><strong>UploadStation</strong></a>
+       </li>
+      <li class="nav-item mx-5 mr-6">
+        <a class="nav-link" href="{{url_for('confirm')}}"><strong>Activecharge</strong></a>
+      </li>
+       <li class="nav-item mx-5 mr-6">
+         <a class="nav-link" href="{{url_for('faq')}}"><strong>faq's</strong></a>
+       </li>
+       <li class="nav-item mx-5 my-lg-0">
+         <a class="nav-link" href="{{url_for('contact')}}"><strong>ContactUs</strong></a>
+       </li>
+       <li class="nav-item mx-4 my-lg-0 my-0">
+          <div class="btn btn-primary" style="border-radius:20px;color:white;font-weight:bolder;"><a class="nav-link" href="{{url_for('confirm')}}">Near Station</a>
+         </div>
+       </li>
+     </ul>
+   </div>
+ </nav>
+
+    <div class="container">
+        <h1>Find Charging Stations</h1>
+        <form id="form" action="/search" method="post">
+            <div class="form-group">
+                <input type="hidden" id="latitude" name="latitude">
+                <input type="hidden" id="longitude" name="longitude">
+            </div>
+            <div class="form-group">
+                <label for="radius">Distance (in km):</label>
+                <input type="number" id="radius" name="radius" placeholder="Enter distance in Km" required>
+            </div>
+            <button id="getLocation" onclick="getLocation()">Get Location</button>
+            <p id="location"></p>
+            <div class="form-group">
+                <button id="submit-btn" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    </div>
+    
+</body>
+  <script src="https://cdn.jsdelivr.net3/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</html>

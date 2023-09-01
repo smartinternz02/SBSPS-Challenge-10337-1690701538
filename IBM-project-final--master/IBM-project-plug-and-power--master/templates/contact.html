@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #87CEFA;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-primary"
+   style="height: 70px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: xx-large;">
+   <a class="navbar-brand ml-5" href="#"><strong>ChargeStation Hub</strong></a>
+
+
+   <!-- Your profile card content here -->
+
+
+   <!-- Add more details or elements as needed -->
+
+
+ </nav>
+ <!-- Navbar 2 - Bright Colors -->
+ <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ml-auto">
+        <li class="nav-item mx-5 mr-6">
+          <a class="nav-link" href="{{url_for('home')}}"><strong>Home</strong></a>
+        </li>
+      <li class="nav-item mx-5 mr-6 ml-3">
+        <a class="nav-link" href="{{url_for('about')}}"><strong>About</strong></a>
+      </li>
+       <li class="nav-item dropdown mx-4 mr-5">
+         <a class="nav-link dropdown-toggle" href="#" id="workshopsDropdown" role="button" data-bs-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+           <strong>ChargeStations</strong>
+         </a>
+         <div class="dropdown-menu" aria-labelledby="workshopsDropdown">
+           <!-- Dropdown content goes here -->
+           <a class="dropdown-item" href="{{url_for('bike')}}">Bike</a>
+           <a class="dropdown-item" href="#">Car</a>
+           <a class="dropdown-item" href="#">Auto</a>
+           <a class="dropdown-item" href="#">Audi</a>
+
+         </div>
+       </li>
+
+       <li class="nav-item mx-5 mr-6">
+         <a class="nav-link" href="{{url_for('getlocation')}}"> <strong>GetLocation</strong></a>
+       </li>
+       <li class="nav-item mx-5 mr-6">
+         <a class="nav-link" href="{{url_for('upload')}}"><strong>UploadStation</strong></a>
+       </li>
+      <li class="nav-item mx-5 mr-6">
+        <a class="nav-link" href="{{url_for('confirm')}}"><strong>Activecharge</strong></a>
+      </li>
+      <li class="nav-item mx-5 mr-6">
+        <a class="nav-link" href="{{url_for('faq')}}"><strong>faq's</strong></a>
+      </li>
+      <li class="nav-item mx-5 my-lg-0">
+        <a class="nav-link" href="{{url_for('contact')}}"><strong>ContactUs</strong></a>
+      </li>
+       <li class="nav-item mx-4 my-lg-0 my-0">
+          <div class="btn btn-primary" style="border-radius:20px;color:white;font-weight:bolder;"><a class="nav-link" href="{{url_for('confirm')}}">Near Station</a>
+         </div>
+       </li>
+     </ul>
+   </div>
+ </nav>
+
+<h3 align="center">Contact Form</h3>
+
+<div class="container">
+  <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+ </body>
+</html>

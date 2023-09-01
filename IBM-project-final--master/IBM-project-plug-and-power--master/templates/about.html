@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+.container{
+font-size:20px;
+
+}
+img{
+margin-left:200px;
+margin-top:50px;
+width:800px;
+height:400px;
+border-radius:25px;
+margin-bottom:10px;}
+</style>
+</head>
+
+<body>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-primary"
+   style="height: 70px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: xx-large;">
+   <a class="navbar-brand ml-5" href="#"><strong>ChargeStation Hub</strong></a>
+
+
+   <!-- Your profile card content here -->
+
+
+   <!-- Add more details or elements as needed -->
+
+
+ </nav>
+ <!-- Navbar 2 - Bright Colors -->
+ <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ml-auto">
+        <li class="nav-item mx-5 mr-6">
+          <a class="nav-link" href="{{url_for('home')}}"><strong>Home</strong></a>
+        </li>
+       <li class="nav-item mx-5 mr-6 ml-3">
+         <a class="nav-link" href="{{url_for('about')}}"><strong>About</strong></a>
+       </li>
+       <li class="nav-item dropdown mx-4 mr-5">
+         <a class="nav-link dropdown-toggle" href="#" id="workshopsDropdown" role="button" data-bs-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+           <strong>ChargeStations</strong>
+         </a>
+         <div class="dropdown-menu" aria-labelledby="workshopsDropdown">
+           <!-- Dropdown content goes here -->
+         <a class="dropdown-item" href="{{url_for('bike')}}">Bike</a>
+           <a class="dropdown-item" href="#">Car</a>
+           <a class="dropdown-item" href="#">Auto</a>
+           <a class="dropdown-item" href="#">Audi</a>
+
+         </div>
+       </li>
+
+       <li class="nav-item mx-5 mr-6">
+         <a class="nav-link" href="{{url_for('getlocation')}}"> <strong>GetLocation</strong></a>
+       </li>
+       <li class="nav-item mx-5 mr-6">
+         <a class="nav-link" href="{{url_for('upload')}}"><strong>UploadStation</strong></a>
+       </li>
+      <li class="nav-item mx-5 mr-6">
+        <a class="nav-link" href="{{url_for('confirm')}}"><strong>Activecharge</strong></a>
+      </li>
+      <li class="nav-item mx-5 mr-6">
+        <a class="nav-link" href="{{url_for('faq')}}"><strong>faq's</strong></a>
+      </li>
+      <li class="nav-item mx-5 my-lg-0">
+        <a class="nav-link" href="{{url_for('contact')}}"><strong>ContactUs</strong></a>
+      </li>
+       <li class="nav-item mx-4 my-lg-0 my-0">
+          <div class="btn btn-primary" style="border-radius:20px;color:white;font-weight:bolder;"><a class="nav-link" href="{{url_for('confirm')}}">Near Station</a>
+         </div>
+       </li>
+     </ul>
+   </div>
+ </nav>
+ <div class="container">
+ <img src="https://media.istockphoto.com/id/1303480001/photo/about-us.webp?b=1&s=170667a&w=0&k=20&c=bO2majhgNDwxjvUxhWj-tVyz8bmZoGICADy51Zyu2kY="/>
+ <p>About Us - FindCharge: Your Ultimate Destination for Locating Nearby Charging Stations
+
+Welcome to FindCharge, your premier online platform for effortlessly locating nearby charging stations. In an era where electric vehicles (EVs) are revolutionizing the way we commute, we recognized the need for a user-friendly and comprehensive solution to assist EV drivers in finding charging points. At FindCharge, we are committed to providing you with a seamless experience, empowering you to travel with confidence in your electric vehicle.
+
+Our Mission: Empowering EV Journeys
+
+Our mission is simple yet impactful: to facilitate the widespread adoption of electric vehicles by creating a reliable and intuitive platform for discovering charging stations. We aim to eliminate the anxiety that often accompanies EV travel by ensuring that you can easily access a network of charging stations wherever your journey takes you. We believe that by making charging station information readily available, we contribute to reducing carbon emissions and building a more sustainable future.
+</p>
+</div>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+ </body>
+ </html>
